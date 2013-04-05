@@ -1,3 +1,12 @@
+# Consuming Modules: Locating Modules in AMD
+
+Ok, so [module ids](004-consuming-modules-module-ids.md) seem simple enough
+This sounds straightforward at first, but you're soon left
+wondering:
+
+> How does the AMD environment know where to find modules if I'm specifying
+ids and not urls?
+
 ## Default Module Location and Base Url
 
 AMD environments must locate modules.  In browsers, this means that the AMD

@@ -1,16 +1,10 @@
-# Consuming AMD Modules: Module Ids
+# Consuming Modules: Module Ids
 
 As we discussed briefly in
 [Authoring AMD Modules](001-authoring-amd-modules.md), some modules require
 other modules to do their work.  The module author specifies these other
 modules by listing each module's *id* in the dependency list or in a
-"local require".  This sounds straightforward at first, but you're soon left
-wondering:
-
-> How does the AMD environment know where to find modules if I'm specifying
-ids and not urls?
-
-We'll answer that question [soon](), but first let's investigate module ids a bit more.
+"local require".
 
 ## Module Ids
 
@@ -65,12 +59,10 @@ hierarchy and contain no `..` or `.`.  The process of removing the leading
 will normalize required ids as follows:
 
 ```js
-define(function (require) {
-	// normalizes to "app/billing/billTo/store"
-	var store = require("./store");
-	// normalizes to "app/billing/payee/Payee"
-	var Payee = require("../payee/Payee");
-});
+// normalizes to "app/billing/billTo/store"
+var store = require("./store");
+// normalizes to "app/billing/payee/Payee"
+var Payee = require("../payee/Payee");
 ```
 
 AMD and CommonJS also recognize bare `.` and `..` as module identifiers.  `.`
@@ -82,17 +74,16 @@ Given that the current module is "app/billing/billTo/Customer", the
 environment will normalize these ids as follows:
 
 ```js
-define(function (require) {
-	// normalizes to "app/billing/billTo" (a module, not a folder!)
-	var billTo = require(".");
-	// normalizes to "app/billing" (a module, not a folder!)
-	var billing = require("..");
-});
+// normalizes to "app/billing/billTo" (a module, not a folder!)
+var billTo = require(".");
+// normalizes to "app/billing" (a module, not a folder!)
+var billing = require("..");
 ```
 
 _Hint:_ never use relative module ids to reference unrelated modules!  Relative
 modules are meant to be used *within* a "package" (defined later).  Also,
 more than one set of `../` may be a code smell that you need to better organize
 your modules.  The relative id may also be interpreted as a url, rather than
-an id by the AMD environment.  See the section [Why multiple `../` is a
-code smell](#why-multiple--is-a-code-smell) for more information.
+an id by an AMD environment.  See the next tutorial
+[Consuming Modules: Locating Modules](005-consuming-modules-locating-module.md)
+for more information.
