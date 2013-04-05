@@ -159,7 +159,9 @@ Well, there are several problems with this code:
 	 received a module named "moment".  The AMD environment will likely
 	 throw an error.
 
-Are you sure you still want to use urls? :)
+>So how do I use modules on a cross-domain server such as a CDN?
+
+<***** put in a snippet to explain that we'll show how to map urls to ids *****>
 
 ## Why multiple `../` is a code smell
 
@@ -192,13 +194,13 @@ be sure to read the next tutorial about packages!
 
 Need to cover these topics, too:
 
-- anonymous modules
+- anonymous modules, when to use them
 
 - rules when loaders revert to url logic
 	- curl.js: leading /
 	- requirejs: .js extension
 
-- contrast with node
+- contrast with node id resolution
 
-- pseudo-modules: require, exports, module
+- pseudo-modules: require, exports, module, global
 
