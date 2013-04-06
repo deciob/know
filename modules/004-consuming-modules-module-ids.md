@@ -44,6 +44,19 @@ to files, the module name should be spelled and capitalized exactly the
 same as the file name.  For instance, "jQuery" is almost always *not*
 the correct module id (capital "Q")!
 
+## Reserved Ids
+
+Most AMD environments reserve a few special module ids to refer to built-in
+modules and utilities.  For instance, most AMD environments reserve the
+"require", "exports", and "module" ids to gain access to pseudo-modules that
+simulate the "free variables" of CommonJS.  AMD environments may reserve
+a few other ids, as well.  For instance, one of the proposed features of
+curl.js 0.8 is a "global" pseudo-module to help devs create code that works
+on the server and the browser.
+
+Check your AMD environment's documentation for more information about
+reserved module ids.
+
 ## Relative Ids
 
 AMD and CommonJS also support the notion of *relative* module identifiers.
@@ -84,6 +97,11 @@ _Hint:_ never use relative module ids to reference unrelated modules!  Relative
 modules are meant to be used *within* a "package" (defined later).  Also,
 more than one set of `../` may be a code smell that you need to better organize
 your modules.  The relative id may also be interpreted as a url, rather than
-an id by an AMD environment.  See the next tutorial
+an id by an AMD environment.
+
+> So, how does the AMD environment know where to find modules if I'm specifying
+ids and not urls?
+
+See the next tutorial
 [Consuming Modules: Locating Modules](005-consuming-modules-locating-module.md)
 for more information.
