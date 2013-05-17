@@ -21,6 +21,8 @@ As a quick review, have a look back at the code we started with, the messy end r
   2. We can no longer handle errors using try/catch/finally
   3. We must add callback and errback parameters to every function signature that might eventually lead to an asynchronous operation
 
+<a name="jump"></a>
+
 ## Promises
 
 A Promise (aka Future, Delayed value, Deferred value) represents a value that is not yet available because the computation that will produce the value has not yet completed. A Promise is a _placeholder_ into which the successful result or reason for failure will eventually materialize.

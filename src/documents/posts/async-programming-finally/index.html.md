@@ -11,6 +11,8 @@ order: 3
 
 As we saw in [Part 1](./async-programming-is-messy), error handling in callback-based asynchronous code gets messy quickly, and loses many of the qualities of synchronous code that make it familiar and easier to reason about.  In [Part 2](./async-programming-with-promises), we introduced Promises and saw how they restore call-and-return semantics, allow errors to propagate up the stack similarly to synchronous exceptions, and generally provide a cleaner approach to managing asynchrony, especially when handling errors.
 
+<a name="jump"></a>
+
 ## Try/catch/finally
 
 In synchronous code, `try/catch/finally` provides a simple and familiar, yet very powerful idiom for performing a task, handling errors, and then always ensuring we can clean up afterward.

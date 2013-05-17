@@ -13,6 +13,8 @@ order: 1
 
 Exceptions and try/catch are an intuitive way to execute operations that may fail. They allow us to recover from the failure, or to let the failure propagate up the call stack to a caller by either not catching the exception, or explicitly re-throwing it.
 
+<a name="jump"></a>
+
 Here's a simple example:
 
 ```js

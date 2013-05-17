@@ -14,18 +14,11 @@ title: 'Home'
 .row
   .span6
     - var post = getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()[0]
-    h2 Latest Post: 
-      = post.title
-    div(style='max-height: 10em; overflow: hidden; position: relative; margin-bottom: 0.5em')
-      div(style='position: absolute; bottom: 0; width: 100%; height: 1em; background: linear-gradient(to bottom, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1));')
-      != post.contentRenderedWithoutLayouts
-    p: a.btn(href=post.url) Continue Reading
+    h2= post.title
+    div!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
+    p: a.btn(href=post.url + '#jump') Continue Reading
 
-    h2 Tutorials
-    p Our tutorials walk you through everything you need to know.  Starting with the fundamentals, you'll be a cujoJS expert in no time.
-    p: a.btn(href="/tutorials") View Tutorials
-
-    h3 Latest tutorials
+    h2 Latest tutorials
     nav.linklist
       ul
         each tutorial in getFiles({ layout: 'tutorial' }, { ctime: -1 }).toJSON().slice(0, 5)
@@ -40,6 +33,10 @@ title: 'Home'
     h2 Get cujoJS
     p Download the latest versions of each library.
     p: a.btn(href="/downloads") Get cujoJS
+
+    h2 Tutorials
+    p Our tutorials walk you through everything you need to know.  Starting with the fundamentals, you'll be a cujoJS expert in no time.
+    p: a.btn(href="/tutorials") View Tutorials
 
     h2 Reference documentation
     p Complete reference documentation for each cujoJS library.
