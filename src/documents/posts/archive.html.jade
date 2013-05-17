@@ -1,16 +1,18 @@
 ---
 layout: page
-title: Blog
-url: /posts
-pageOrder: 5
+title: Blog Archive
+url: /posts/archive
 ---
 
+- var year = '';
 #blog-archives
-  each post in getFiles({ layout: 'post' }, { ctime: -1 }).toJSON().slice(0,2)
+  each post in getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()
     - post.year = formatDate(post.ctime, 'YYYY')
     - post.month = formatDate(post.ctime, 'MMM')
     - post.day = formatDate(post.ctime, 'DD')
-    h2= post.year
+    if post.year != year
+      - year = post.year
+      h2= post.year
     article
       h3
         a(href=post.url)= post.title
@@ -19,9 +21,6 @@ pageOrder: 5
         span.day= post.day
         span.year= post.year
       if post.contentRenderedWithoutLayouts
-        div.post!= post.contentRenderedWithoutLayouts
+        div.post!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
         p
-          a(href=post.url + '#tags') Comments
-
-  article
-    p: a.btn.btn-primary(href='/posts/archive') Full Archives
+         a(href=post.url + '#jump') Continue reading...
