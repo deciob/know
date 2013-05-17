@@ -14,7 +14,7 @@ order: 2
 
 In [Part 1][1], we looked at the awkward situation created when we introduce callbacks to handle even a single asynchronous operation into an otherwise simple set of function calls.
 
-   [1]: ./async-programming-is-messy
+   [1]: /posts/async-programming-is-messy
 
 As a quick review, have a look back at the code we started with, the messy end result when using callbacks, and the things we'd like to fix in order to get back to sanity:
 
@@ -76,7 +76,7 @@ By using Promises, we can restore the familiar call-and-return programming model
 
 To see how this works, let's start with a simplified version of the [synchronous `getTheResult` function from Part 1][10], without try/catch so that exceptions will always propagate up the call stack.
 
-   [10]: ./async-programming-is-messy
+   [10]: /posts/async-programming-is-messy
 
 ```js
 function thisMightFail() {
@@ -191,7 +191,7 @@ getTheResult().then(
 
 ![WAT][11]
 
-   [11]: ./funny-surprised-owl-WHAT.jpg
+   [11]: /posts/async-programming-with-promises/funny-surprised-owl-WHAT.jpg
 
 (Image from [The Meta Picture][12])
 
@@ -224,4 +224,4 @@ So, while one way to think of Promises is as a standard API to callback registra
 
 Now that we've restored call-and-return and removed callbacks from our function signatures, we need a way to handle failures. Ideally, we'd like to use try/catch/finally, or at least something that _looks and acts just like it_ and works in the face of asynchrony.
 
-In [Part 3](./async-programming-finally), we'll put the final piece of the puzzle into place, and see how to model try/catch/finally using Promises.
+In [Part 3](/posts/async-programming-finally), we'll put the final piece of the puzzle into place, and see how to model try/catch/finally using Promises.

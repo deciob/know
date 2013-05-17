@@ -10,7 +10,7 @@ order: 3
 
 *This tutorial is an adaption of [this original blog post](http://blog.briancavalier.com/async-programming-part-3-finally/)*
 
-As we saw in [Part 1](./async-programming-is-messy), error handling in callback-based asynchronous code gets messy quickly, and loses many of the qualities of synchronous code that make it familiar and easier to reason about.  In [Part 2](./async-programming-with-promises), we introduced Promises and saw how they restore call-and-return semantics, allow errors to propagate up the stack similarly to synchronous exceptions, and generally provide a cleaner approach to managing asynchrony, especially when handling errors.
+As we saw in [Part 1](/posts/async-programming-is-messy), error handling in callback-based asynchronous code gets messy quickly, and loses many of the qualities of synchronous code that make it familiar and easier to reason about.  In [Part 2](/posts/async-programming-with-promises), we introduced Promises and saw how they restore call-and-return semantics, allow errors to propagate up the stack similarly to synchronous exceptions, and generally provide a cleaner approach to managing asynchrony, especially when handling errors.
 
 <a name="jump"></a>
 
