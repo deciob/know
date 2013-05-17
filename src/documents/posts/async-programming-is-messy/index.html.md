@@ -2,6 +2,7 @@
 layout: post
 title: Async Programming is Messy
 tags: ['promises', 'when', 'async']
+toc: true
 ctime: 2012-03-14
 mtime: 2013-05-15
 order: 1

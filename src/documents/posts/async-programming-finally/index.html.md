@@ -2,6 +2,7 @@
 layout: post
 title: Async Programming Finally
 tags: ['promises', 'when', 'async']
+toc: true
 ctime: 2013-05-15
 mtime: 2013-05-15
 order: 3

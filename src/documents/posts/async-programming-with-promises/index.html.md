@@ -3,6 +3,7 @@ layout: post
 title: Async Programming with Promises
 tags: ['promises', 'when', 'async']
 url: '/posts/async-programming-with-promises/'
+toc: true
 ctime: 2013-03-17
 mtime: 2013-05-15
 order: 2
