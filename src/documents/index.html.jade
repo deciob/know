@@ -14,9 +14,10 @@ title: 'Home'
 .row
   .span6
     - var post = getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()[0]
-    h2= post.title
-    div!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
-    p: a.btn(href=post.url + '#jump') Continue Reading
+    if post && post.contentRenderedWithoutLayouts
+      h2= post.title
+      div!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
+      p: a.btn(href=post.url + '#jump') Continue Reading
 
     h2 Latest tutorials
     nav.linklist

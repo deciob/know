@@ -21,3 +21,7 @@ pageOrder: 5
         span.month= post.month
         span.day= post.day
         span.year= post.year
+      if post.contentRenderedWithoutLayouts
+        div.post!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
+        p
+         a(href=post.url + '#jump') Continue reading...
