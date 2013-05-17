@@ -7,14 +7,17 @@ pageOrder: 5
 
 - var year = '';
 #blog-archives
-  each post in getFiles({ layout: 'post', outExtension: 'html' }, { date: -1 }).toJSON()
-    if formatDate(post.ctime, 'YYYY') != year
-      - year = formatDate(post.ctime, 'YYYY')
-      h2= year
+  each post in getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()
+    - post.year = formatDate(post.ctime, 'YYYY')
+    - post.month = formatDate(post.ctime, 'MMM')
+    - post.day = formatDate(post.ctime, 'DD')
+    if post.year != year
+      - year = post.year
+      h2= post.year
     article
       h3
         a(href=post.url)= post.title
       time(datetime=post.ctime.toISOString(), pubdate)
-        span.month= formatDate(post.ctime, 'MMM')
-        span.day= formatDate(post.ctime, 'DD')
-        span.year= formatDate(post.ctime, 'YYYY')
+        span.month= post.month
+        span.day= post.day
+        span.year= post.year

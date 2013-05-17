@@ -13,7 +13,7 @@ title: 'Home'
 
 .row
   .span6
-    - var post = getFiles({ layout: 'post' }, { date: -1 }).toJSON()[0]
+    - var post = getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()[0]
     h2 Latest Post: 
       = post.title
     div(style='max-height: 10em; overflow: hidden; position: relative; margin-bottom: 0.5em')

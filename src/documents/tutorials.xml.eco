@@ -15,7 +15,7 @@ urls: ['/atom.xml']
     <email><%= @site.email %></email>
   </author>
 
-  <% for document in @getFiles({ layout: 'post', outExtension: 'html' }, { date: -1 }).toJSON(): %>
+  <% for document in @getFiles({ layout: 'post' }, { ctime: -1 }).toJSON(): %>
     <entry>
       <title><%= document.title %></title>
       <link href="<%= @site.url+'/'+document.url %>"/>
